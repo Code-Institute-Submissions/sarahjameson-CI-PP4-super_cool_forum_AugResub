@@ -1,1 +1,1 @@
-web: gunicorn super-cool-forum.wsgi
+web: gunicorn forum.wsgi
