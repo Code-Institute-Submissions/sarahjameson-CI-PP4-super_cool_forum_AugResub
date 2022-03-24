@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'reddit',
+    'django_summernote',
     'cloudinary',
+    'reddit',
 ]
 
 MIDDLEWARE = [
