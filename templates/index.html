@@ -1,8 +1,47 @@
-{% load static %}
-{% extends 'base.html'}
+{% extends 'base.html' %}
 
 {% block content %}
 
-<h1>Home template</h1>
+<div class="contained-fluid">
+    <div class="row">
+
+        <div class="col-12 mt-3 left">
+            <div class="row">
+            {% for post in post_list %}
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"> {{ post.title }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.author }}</h6>
+                  <p class="card-text">{{ post.excerpt }}</p>
+                  <hr>
+                  <p class="card-text text-muted">{{ post.created_on }}</p>
+                  <i class="far fa-heart"></i> {{ post.number_of_likes}}
+                  <a href="#" class="card-link">View post and comments</a>
+                </div>
+              </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 {% endblock content %}
