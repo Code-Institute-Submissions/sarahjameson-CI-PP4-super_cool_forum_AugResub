@@ -10,6 +10,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ('title', 'content')
+    
 
 @admin.register(Comment)
 class CommmentAdmin(admin.ModelAdmin):
