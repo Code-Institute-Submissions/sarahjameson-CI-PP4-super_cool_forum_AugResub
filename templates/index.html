@@ -4,9 +4,10 @@
 
 <div class="contained-fluid">
     <div class="row">
-        <div class="col-12 mt-3 left">
+        <div class="col-9 mt-3 left">
             <div class="row">
             {% for post in post_list %}
+            <!-- <div class="col-md-4"> -->
             <div class="card">
                 <div class="card-body">
                   <h5 class="card-title"> {{ post.title }}</h5>
@@ -16,8 +17,10 @@
                   <p class="card-text text-muted">{{ post.created_on }}</p>
                   <i class="far fa-heart"></i> {{ post.number_of_likes}}
                   <a href="#" class="card-link">View post and comments</a>
+                <!-- </div> -->
                 </div>
               </div>
+            
 
             {% if forloop.counter|divisibleby:3 %}
             </div>
