@@ -56,6 +56,6 @@ def post(self, request, slug, *args, **kwargs):
                 "post": post,
                 "comments": comments,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form
             },
         )
