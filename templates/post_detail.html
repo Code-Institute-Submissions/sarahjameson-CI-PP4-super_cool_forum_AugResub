@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="container">
   <div class="row">
     <div class="col-9">
@@ -53,7 +55,17 @@
   </div>
   <div class="cold-md-4">
     <div class="card-body">
-      
+      {% if user.is_authenticated %}
+      <h3>Comment:</h3>
+      <p>Posting as {{ user.username }}</p>
+      <form method="post">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn-signup">
+          Submit
+        </button>
+      </form>
+      {% endif %}
     </div>
   </div>
 </div>
