@@ -50,8 +50,9 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django_summernote',
-    'cloudinary',
     'crispy_forms',
+    "crispy_bootstrap5",
+    'cloudinary',
     'reddit',
 ]
 
@@ -60,7 +61,9 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGTGOUT_REDIRECT_URL = '/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

@@ -1,4 +1,4 @@
-from xml.etree.ElementTree import Comment
+# from xml.etree.ElementTree import Comment
 from .models import Comment
 from django import forms
 
