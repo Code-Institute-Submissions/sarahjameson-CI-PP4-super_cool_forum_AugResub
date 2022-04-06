@@ -2,34 +2,43 @@
 
 {% block content %}
 
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-9 mt-3 left">
             <div class="row">
-            {% for post in post_list %}
-            <!-- <div class="col-md-4"> -->
-            <div class="card">
-                <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                  <h5 class="card-title"> {{ post.title }}</h5></a>
-                  <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.author }}</h6>
-                  <p class="card-text">{{ post.excerpt }}</p>
-                  <hr>
-                  <p class="card-text text-muted">{{ post.created_on }}</p>
-                  <i class="far fa-heart"></i> {{ post.number_of_likes}}
-                  <a href="{% url 'post_detail' post.slug %}" class="card-link">View post and comments</a>
-                <!-- </div> -->
+                {% for post in post_list %}
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            <h5 class="card-title"> {{ post.title }}</h5>
+                        </a>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.author }}</h6>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                        <hr>
+                        <p class="card-text text-muted">{{ post.created_on }}</p>
+                        <i class="far fa-heart"></i> {{ post.number_of_likes}}
+                        <a href="{% url 'post_detail' post.slug %}" class="card-link">View post and comments</a>
+                    </div>
                 </div>
-              </div>
-            
 
-            {% if forloop.counter|divisibleby:3 %}
+
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
                 {% endfor %}
             </div>
-
+        </div>
+        <div class="col-3 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    {% if not user.is_authenticated %}
+                    <h3>Welcome to the site.</h3>
+                    <p>You can read posts here but to like and comment please sign in our signup</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
     {% if is_paginated %}
