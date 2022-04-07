@@ -71,3 +71,12 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class PostCreate(View):
+    
+    def get(self, request):
+
+        return render(request, "create_post.html")
+    
+
+

@@ -36,6 +36,10 @@
                     {% if not user.is_authenticated %}
                     <h3>Welcome to the site.</h3>
                     <p>You can read posts here but to like and comment please sign in our signup</p>
+                    {% else %}
+                    <h3>Welcome {{ user.username }}</h3>
+                    <p>What will you write about today?</p>
+                    <a href="{% url 'create_post' %}">Create a post</a>
                     {% endif %}
                 </div>
             </div>

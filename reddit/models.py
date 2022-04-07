@@ -40,4 +40,3 @@ class Comment(models.Model):
 
 
 
-
