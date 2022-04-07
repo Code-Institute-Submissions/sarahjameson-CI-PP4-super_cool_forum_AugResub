@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, get_list_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
+from django.utils.text import slugify
 
 class PostList(generic.ListView):
     model = Post
@@ -76,7 +77,27 @@ class PostCreate(View):
     
     def get(self, request):
 
-        return render(request, "create_post.html")
-    
+        return render(request, "create_post.html",
+        {
+        "post_form": PostForm()
+        },
+        )      
 
+    def post(self, request, *args, **kwargs):
 
+        post_form = PostForm(data=request.POST)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post_form.instance.email = request.user.email
+            post_form.instance.name = request.user.username
+            post_form.instance.slug = slugify(post.title)
+            post.save()
+            return redirect('home')
+        else:
+            post_form = PostForm()
+
+        return render(request, "create_post.html",
+        {
+        "post_form": PostForm()
+        })
