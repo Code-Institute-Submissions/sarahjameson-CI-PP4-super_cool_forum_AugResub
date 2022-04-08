@@ -91,6 +91,7 @@ class PostCreate(View):
             post = post_form.save(commit=False)
             post_form.instance.email = request.user.email
             post_form.instance.name = request.user.username
+            post.author = request.user
             post_form.instance.slug = slugify(post.title)
             post.save()
             return redirect('home')
@@ -101,3 +102,33 @@ class PostCreate(View):
         {
         "post_form": PostForm()
         })
+
+
+class UpdatePost(View):
+    
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+
+        return render (
+            request,
+            "update_post.html",
+            {
+                "post_form": PostForm(instance=post)
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        post_form = PostForm(data=request.POST, instance=post)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post_form.instance.email = request.user.email
+            post_form.instance.name = request.user.username
+            post.author = request.user
+            post_form.instance.slug = slugify(post.title)
+            post.save()
+            return redirect('home')
+        else:
+            post_form = PostForm(instance=post)
+

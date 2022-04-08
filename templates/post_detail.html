@@ -57,6 +57,8 @@
           {% if user.is_authenticated %}
           <h3>Welcome {{ user.username}}.</h3>
           <p>What are you going to write about?</p>
+          <a href="{% url 'update_post' post.slug %}">Edit this post</a><br>
+          <a href="{% url 'create_post' %}">Create new post</a>
           {% endif %}
         </div>
       </div>
