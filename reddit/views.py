@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.utils.text import slugify
 
@@ -132,3 +132,25 @@ class UpdatePost(View):
         else:
             post_form = PostForm(instance=post)
 
+class DeletePost(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        return render(request, "delete.html")
+
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        post.delete()
+        return redirect('home')
+
+class ProfilePostList(View):
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        user_posts = Post.objects.filter(author=request.user).order_by('-updated_on')
+        return render(request, "user_profile.html", {
+            "user_posts": user_posts,
+            "user": user,
+        })
+
+
+    
