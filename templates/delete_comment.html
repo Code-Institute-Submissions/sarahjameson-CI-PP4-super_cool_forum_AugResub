@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="col-9">
+    <div class="card">
+        <div class="card-body">
+            <h3>Are you sure that you wish to delete your your comment?</h3>
+            <form method="post">
+                {{ post_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn-signup">
+                  Continue
+                </button>               
+              </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

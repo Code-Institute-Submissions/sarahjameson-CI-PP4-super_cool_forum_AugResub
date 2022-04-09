@@ -135,7 +135,7 @@ class UpdatePost(View):
 class DeletePost(View):
 
     def get(self, request, slug, *args, **kwargs):
-        return render(request, "delete.html")
+        return render(request, "delete_post.html")
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -152,5 +152,17 @@ class ProfilePostList(View):
             "user": user,
         })
 
+class SearchPosts(View):
+
+    def post(self, request, *args, **kwargs):
+        searched = self.request.POST["searched"]
+        posts = Post.objects.filter(title__contains=searched)
+        return render(request, "search_posts.html", {
+            "searched": searched,
+            "posts": posts
+        })
+        
+
+        
 
     
