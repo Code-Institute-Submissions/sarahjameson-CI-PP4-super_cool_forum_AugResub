@@ -14,8 +14,8 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'index.html')
 
     def test_get_post_detail_page(self):
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1)
-        response = self.client.get(f'/{post.slug}')
+        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        response = self.client.get(f'/{post.slug}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'post_detail.html')
 
@@ -29,8 +29,8 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'user_profile.html')
 
     def test_edit_post_page(self):
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1)
-        response = self.client.post(f'/edit/{post.slug}')
+        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        response = self.client.get(f'/edit/{post.slug}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'update_post.html')
 
@@ -46,15 +46,19 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'create_post.html')
 
     def test_can_add_comment(self):
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1)
-        comment = Comment.objects.create(body='Testing', post = self.post)
-        response = self.client.post(f'/post-detail/{post.slug}', {'body': 'Testing'})
+        test_user = User.objects.create_user(
+            username='testuser', password='password'
+            )
+        self.client.login(username='testuser', password='password')
+        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        comment = Comment.objects.create(body='Testing', post=post)
+        response = self.client.post(f'/{post.slug}/', {'body': 'Testing'})
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'post_detail.html')
 
     def test_can_delete_post(self):
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1)
-        response = self.client.get(f'/delete-post/{post.slug}')
-        self.assertRedirects(response, '')
+        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        response = self.client.post(f'/delete-post/{post.slug}')
+        self.assertRedirects(response, '/')
         existing_posts = Post.objects.filter(slug=post.slug)
         self.assertEqual(len(existing_posts), 0)
