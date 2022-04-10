@@ -25,7 +25,7 @@ class TestModels(TestCase):
 
     def test_post_slug(self):
         """
-        Testing the slug of a created recipe
+        Testing the slug of a created post
         """
         test_user = User.objects.create_user(
             username='testuser', password='password'
