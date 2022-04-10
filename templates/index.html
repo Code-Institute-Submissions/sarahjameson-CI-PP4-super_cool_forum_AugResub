@@ -5,8 +5,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-9 mt-3 left">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    {% if not user.is_authenticated %}
+                    <h3>Welcome to the site.</h3>
+                    <p>You can read posts here but to like and comment please sign in our signup</p>
+                    {% else %}
+                    <h3>Welcome {{ user.username }}</h3>
+                    <p>What will you write about today?</p>
+                    <a href="{% url 'create_post' %}">Create a post</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
             <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mt-3"></div>
                 {% for post in post_list %}
                 <div class="card mb-3">
                     <div class="card-body">
@@ -33,20 +47,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-            </div>
-        </div>
-        <div class="col-3 mt-3">
-            <div class="card">
-                <div class="card-body">
-                    {% if not user.is_authenticated %}
-                    <h3>Welcome to the site.</h3>
-                    <p>You can read posts here but to like and comment please sign in our signup</p>
-                    {% else %}
-                    <h3>Welcome {{ user.username }}</h3>
-                    <p>What will you write about today?</p>
-                    <a href="{% url 'create_post' %}">Create a post</a>
-                    {% endif %}
-                </div>
             </div>
         </div>
     </div>
