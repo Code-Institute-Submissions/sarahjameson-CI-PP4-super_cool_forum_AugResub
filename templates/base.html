@@ -18,23 +18,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-dark navbar-expand">
+  <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Forum</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=<span
-        class="navbar-toggler-icon"></span>></button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+          <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
@@ -47,13 +47,49 @@
       </ul>
       <form class="d-flex" method="post" action="{% url 'search_posts' %}">
         {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-        <button class="btn btn-outline-secondary" type="submit">Search posts</button>
+        <input class="form-control me-2" type="search" placeholder="Search posts" aria-label="Search" name="searched">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
       </form>
     </div>
     </div>
+  </nav> -->
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="{% url 'home' %}">Forum</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="{% url 'home' %}" href="#">Home</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+        <form class="d-flex" method="post" action="{% url 'search_posts' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Search posts" aria-label="Search" name="searched">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
   </nav>
+  
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -76,6 +112,8 @@
       © 2022 Copyright: Forum
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <script>
     setTimeout(function() {
