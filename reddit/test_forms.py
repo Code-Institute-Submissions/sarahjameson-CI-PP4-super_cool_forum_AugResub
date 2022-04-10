@@ -3,7 +3,7 @@ from .forms import CommentForm, PostForm
 
 class TestCommentForm(TestCase):
     '''
-    Testing to Comment Form
+    Testing for Comment Form
     '''
 
     def comment_text_is_required(self):
@@ -23,6 +23,9 @@ class TestCommentForm(TestCase):
         self.assertEqual(form.Meta.fields, ('body',))
 
 class TestPostForm(TestCase):
+    '''
+    Testing for Post Form
+    '''
 
     def title_text_is_required(self):
         '''
@@ -48,3 +51,4 @@ class TestPostForm(TestCase):
         '''
         form = PostForm()
         self.assertEqual(form.Meta.fields, ('title','content', 'status'))
+        

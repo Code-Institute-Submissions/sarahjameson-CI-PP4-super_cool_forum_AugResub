@@ -2,67 +2,69 @@
 
 {% block content %}
 
-
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-3">
-            <div class="card">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
+            <div class="card mt-3 mb-3">
                 <div class="card-body">
                     {% if not user.is_authenticated %}
-                    <h3>Welcome to the site.</h3>
-                    <p>You can read posts here but to like and comment please sign in our signup</p>
+                    <h3>Welcome to our site 👋</h3>
+                    <p>You can read posts here but to engagae with them please sign in or signup</p>
                     {% else %}
-                    <h3>Welcome {{ user.username }}</h3>
+                    <h3>Welcome {{ user.username }} 😄</h3>
                     <p>What will you write about today?</p>
                     <a href="{% url 'create_post' %}">Create a post</a>
                     {% endif %}
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mt-3"></div>
-                {% for post in post_list %}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                            <h5 class="card-title"> {{ post.title }}</h5>
-                        </a>
-                        <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.author }}</h6>
-                        {% if user.is_authenticated and user == post.author %}
-                        <small><a href="{% url 'update_post' post.slug %}">Edit post</a></small>
-                        <small><a href="{% url 'delete_post' post.slug %}">Delete post</a></small>
-                        {% endif %}
-                        <br><br>
-                        <p class="card-text">{{ post.content }}</p>
-                        <hr>
-                        <p class="card-text text-muted">{{ post.created_on }}</p>
-                        <i class="far fa-heart"></i> {{ post.number_of_likes}}
-                        <a href="{% url 'post_detail' post.slug %}" class="card-link">View post and comments</a>
-                    </div>
-                </div>
+    </div>
+</div>
 
 
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
+        {% for post in post_list %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                    <h5 class="card-title"> {{ post.title }}</h5>
+                </a>
+                <h6 class="card-subtitle mb-2 text-muted">Posted by {{ post.author }}</h6>
+                {% if user.is_authenticated and user == post.author %}
+                <small><a href="{% url 'update_post' post.slug %}">Edit post</a></small>
+                <small><a href="{% url 'delete_post' post.slug %}">Delete post</a></small>
                 {% endif %}
-                {% endfor %}
+                <br><br>
+                <p class="card-text">{{ post.content }}</p>
+                <hr>
+                <p class="card-text text-muted">{{ post.created_on }}</p>
+                <i class="far fa-heart"></i> {{ post.number_of_likes}}
+                <a href="{% url 'post_detail' post.slug %}" class="card-link">View post and comments</a>
             </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 </div>
 
 {% endblock content %}

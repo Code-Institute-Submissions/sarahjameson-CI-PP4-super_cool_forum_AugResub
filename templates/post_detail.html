@@ -6,24 +6,29 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-3">
-      <div class="card">
-        <div class="card-body">
-          {% if user.is_authenticated %}
-          <h3>Welcome {{ user.username}}.</h3>
-          <p>What are you going to write about?</p>
-          <a href="{% url 'create_post' %}">Create new post</a><br>
-          {% else %}
-          <h3>Welcome to the site.</h3>
-          <p>You can read posts here but to like and comment please sign in our signup</p>
-          {% endif %}
-          {% if user.is_authenticated and user == post.author %}
-          <a href="{% url 'update_post' post.slug %}">Edit this post</a>
-          {% endif %}
-        </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
+    <div class="card">
+      <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Welcome {{ user.username}} 🤓</h3>
+        <p>What are you going to write about?</p>
+        <a href="{% url 'create_post' %}">Create new post</a><br>
+        {% else %}
+        <h3>Welcome to the site.</h3>
+        <p>You can read posts here but to like and comment please sign in our signup</p>
+        {% endif %}
+        {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'update_post' post.slug %}">Edit this post</a>
+        {% endif %}
       </div>
     </div>
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mt-3">
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
       <h1 class="post-title mt-3">{{ post.title }}</h1>
       <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
       <div class="col card">
@@ -64,8 +69,10 @@
         </div>
       </div>
     </div>
+  </div>
+
     <div class="row">
-      <div class="col-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card mt-3">
           <div class="card-body">
             <div class="card-body">
@@ -110,7 +117,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 
 {% endblock content %}
