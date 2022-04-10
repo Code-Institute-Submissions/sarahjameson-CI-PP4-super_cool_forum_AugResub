@@ -4,7 +4,7 @@ Here is a link to the live project. ()
 
 Super Cool Forum is a website where people can share their thoughts through posts.
 
-![responsive]()
+![responsive](assets/images/responsive-image.png)
 
 ## Contents 
 

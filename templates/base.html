@@ -24,10 +24,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="{% url 'home' %}">Forum</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Super Cool Forum</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="{% url 'home' %}" href="#">Home</a>
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
