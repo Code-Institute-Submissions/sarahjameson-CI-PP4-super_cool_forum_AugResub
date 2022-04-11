@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .forms import CommentForm, PostForm
 
+
 class TestCommentForm(TestCase):
     '''
     Testing for Comment Form
@@ -21,6 +22,7 @@ class TestCommentForm(TestCase):
         '''
         form = CommentForm()
         self.assertEqual(form.Meta.fields, ('body',))
+
 
 class TestPostForm(TestCase):
     '''
@@ -50,5 +52,4 @@ class TestPostForm(TestCase):
         Test to ensure that the fields listed in the meta class are present
         '''
         form = PostForm()
-        self.assertEqual(form.Meta.fields, ('title','content', 'status'))
-        
+        self.assertEqual(form.Meta.fields, ('title', 'content', 'status'))
