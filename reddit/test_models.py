@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Post, Comment
 
+
 class TestModels(TestCase):
 
     def test_post_model_str(self):
@@ -30,7 +31,11 @@ class TestModels(TestCase):
         test_user = User.objects.create_user(
             username='testuser', password='password'
             )
-        post = Post.objects.create(title='test post item', content='Hello', status=1, slug='test-post-item')
+        post = Post.objects.create(
+            title='test post item',
+            content='Hello',
+            status=1,
+            slug='test-post-item')
         self.assertEqual(
                 post.slug, 'test-post-item'
                 )
