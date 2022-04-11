@@ -1,15 +1,18 @@
-from django.shortcuts import render, get_object_or_404, get_list_or_404, reverse, redirect
+from django.shortcuts import (
+    render, get_object_or_404, get_list_or_404, reverse, redirect)
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.utils.text import slugify
 
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class PostDetail(View):
 
@@ -21,7 +24,7 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        return render (
+        return render(
             request,
             "post_detail.html",
             {
@@ -51,7 +54,7 @@ class PostDetail(View):
             else:
                 comment_form = CommentForm()
 
-            return render (
+            return render(
                 request,
                 "post_detail.html",
                 {
@@ -61,6 +64,7 @@ class PostDetail(View):
                     "comment_form": comment_form
                 },
             )
+
 
 class PostLike(View):
 
@@ -73,15 +77,11 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-class PostCreate(View):
-    
-    def get(self, request):
 
-        return render(request, "create_post.html",
-        {
-        "post_form": PostForm()
-        },
-        )      
+class PostCreate(View):
+
+    def get(self, request):
+        return render(request, "create_post.html", {"post_form": PostForm()},)
 
     def post(self, request, *args, **kwargs):
 
@@ -98,18 +98,15 @@ class PostCreate(View):
         else:
             post_form = PostForm()
 
-        return render(request, "create_post.html",
-        {
-        "post_form": PostForm()
-        })
+        return render(request, "create_post.html", {"post_form": PostForm()})
 
 
 class UpdatePost(View):
-    
+
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 
-        return render (
+        return render(
             request,
             "update_post.html",
             {
@@ -132,6 +129,7 @@ class UpdatePost(View):
         else:
             post_form = PostForm(instance=post)
 
+
 class DeletePost(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -142,15 +140,18 @@ class DeletePost(View):
         post.delete()
         return redirect('home')
 
+
 class ProfilePostList(View):
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        user_posts = Post.objects.filter(author=request.user).order_by('-updated_on')
+        user_posts = Post.objects.filter(
+            author=request.user).order_by('-updated_on')
         return render(request, "user_profile.html", {
             "user_posts": user_posts,
             "user": user,
         })
+
 
 class SearchPosts(View):
 
@@ -161,8 +162,3 @@ class SearchPosts(View):
             "searched": searched,
             "posts": posts
         })
-        
-
-        
-
-    
