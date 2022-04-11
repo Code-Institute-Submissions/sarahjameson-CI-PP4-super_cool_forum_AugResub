@@ -1,8 +1,8 @@
 # Super Cool Forum
 
-Here is a link to the live project. ()
+[ 💻 Live website](https://super-cool-forum.herokuapp.com/)
 
-Super Cool Forum is a website where people can share their thoughts through posts.
+Super Cool Forum is a website where people can share their thoughts through posts and comments.
 
 ![responsive](assets/images/responsive-image.png)
 
@@ -47,7 +47,7 @@ Super Cool Forum is a website where people can share their thoughts through post
 
 ## User Experience (UX)
 
-A visitor to Eat Me! would be someone who is most likely an adult who is looking to either find new recipes or to share their own creations. 
+A visitor to the Super Cool Forum site would be someone of any age who wishes to share their thoughts with the world.
 
 ## User Stories 
 
@@ -315,22 +315,14 @@ I ended up removing the email field from the comment model in the final build of
     - A python based framework that was used to develop the site.
 - [Bootstrap](https://getbootstrap.com/)
     - For help designing the html templates.
-- [Google Fonts](https://fonts.google.com/)
-    - Used to style the website's logo.
 - [Font Awesome](https://fontawesome.com/)
     - Used to obtain the icons used.
 - [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
     - Used to help fix problem areas and identify bugs.
-- [Cloudinary](https://cloudinary.com/)
-    - Used to store static files and images.
-- [Favicon.io](https://favicon.io/)
-    - Used to generate the site's favicon.
 - [SQlite](https://www.sqlite.org/index.html)
     - Used when performing unit tests.
 - [PostgreSQL](https://www.postgresql.org/)
     - Database used through heroku.
-- [SmartDraw](https://cloud.smartdraw.com/)
-    - To draw out the database schema.
 - [Balsamiq](https://balsamiq.com/)
     - To create the wireframes.
 - [W3C Markup Validation Service](https://validator.w3.org/) 
@@ -354,9 +346,33 @@ I ended up removing the email field from the comment model in the final build of
 
 [Back to top ⇧](#eat-me)
 
-## Testing 
+## Testing
 
-Testing and results can be found [here](TESTING.md)
+### Validators
+
+HTML
+[index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2F)
+create post - https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fcreate-post
+user profile - https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fuser-profile#textarea - only some errors related to the django syntax
+post detail - https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fhello%2F
+edit post - https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fedit%2Fhello
+
+CSS
+passes
+
+Javascript
+passes
+
+Python PEP 8
+All files pass
+
+Lighthouse results
+![lighthouse](assets/images/lighthouse-results.png)
+
+
+
+
+
 
 ## Deployment
 
