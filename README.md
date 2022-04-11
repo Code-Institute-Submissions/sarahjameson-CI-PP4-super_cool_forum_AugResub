@@ -1,10 +1,13 @@
 # Super Cool Forum
 
-[ 💻 Live website](https://super-cool-forum.herokuapp.com/)
-
-Super Cool Forum is a website where people can share their thoughts through posts and comments.
-
 ![responsive](assets/images/responsive-image.png)
+
+- [ 💻 Live website](https://super-cool-forum.herokuapp.com/)
+- [ 🗂 GitHub. Repository](https://github.com/sarahjameson/CI-PP4-super_cool_forum)
+
+## About
+
+Super Cool Forum is a website where people can share their thoughts through posts and comments. It is a place where people can unite to test their writing skills out and their communication skills. The website is meant to be a safe haven from the hustle and bustle of life. It tries to go back to basics in terms of functionality and design which allows the users to truly concentrate on the task at hand as well as give their minds a break from the overstrimulation of life. Rest up and take it easy. You're using the Super Cool Forum now!
 
 ## Contents 
 
@@ -19,14 +22,11 @@ Super Cool Forum is a website where people can share their thoughts through post
 
 - [Features](#features)
    * [Home page](#home-page)
-   * [Accounts](#accounts)
-   * [All Recipes page](#all-recipes-page)
-   * [Favourite Recipes](#favourite-recipes)
-   * [Your Recipes](#your-recipes)
-   * [Searched Recipes](#searched-recipes)
-   * [Recipe Detail page](#recipe-detail-page)
-   * [Add Recipe page](#add-recipe-page)
-   * [Edit Recipe page](#edit-recipe-page)
+   * [User profile](#user-profile)
+   * [Searched posts](#searched-posts)
+   * [Post detail page](#post-detail-page)
+   * [Add post page](#add-post-page)
+   * [Edit post page](#edit-post-page)
    * [Features to add](#features-to-add)
 
 - [Technologies](#technologies)
@@ -45,80 +45,68 @@ Super Cool Forum is a website where people can share their thoughts through post
    * [Code](#code)
    * [Media](#media)
 
+
 ## User Experience (UX)
 
 A visitor to the Super Cool Forum site would be someone of any age who wishes to share their thoughts with the world.
 
 ## User Stories 
 
-A list of my user stories and their tasks can be found [here](https://github.com/delboy/eatme/issues).
+My starting user stories and their tasks can be found [here](https://github.com/sarahjameson/CI-PP4-super_cool_forum/issues?q=is%3Aissue+is%3Aclosed).
 
-### EPIC | Navigation
-- As a User I can immediately understand the website's purpose so that I know if it's what I'm looking for.
+### Navigation
+- As a User I can understand the website's purpose so that I know if it's what I'm looking for.
 - As a User I can navigate around the site so that I can easily view desired content.
-- As a User I can view a list of recipes so that I can choose one to read.
-- As a User I can click on a recipe so that I can read the recipe details.
-- As a User I can search recipes so that I can find specific recipes I'm looking for.
+- As a User I can view a list of posts on the home page to late pick one to look at in more detail.
+- As a User I can click on a post that I can read the comments on it.
+- As a User I can search the pots's titles so that I can find related posts..
 
-### EPIC | User's Recipes
-- As a User I can create recipes so that other users can view them
-- As a User I can view my recipes so that I can see and manage all recipes I have created.
-- As a User I can edit recipes so that I can update any changes or mistakes to my recipes.
-- As a User I can delete recipes so that I can remove any unwanted recipes I have made.
-- As a User I can view all my liked recipes so that I can return to them with ease.
+### User's Posts
+- As a User I can create posts so that other users can view them and comments on them.
+- As a User I can view all the posts that I have created (published or saved as draft) from my prodfile page so that I can see and manage all the posts.
+- As a User I can edit posts so that I can update the post with any desired information or mistakes to my recipes.
+- As a User I can delete my own posts so that I can remove any unwanted posts from my collection.
 
-### EPIC | User Interaction
-- As a User I can like/unlike recipes so that I can mark which recipes I enjoyed.
-- As a User I can comment on recipes so that I can give my feedback to others.
-- As a User I can view the number of likes on a recipe so that I can see which is most popular.
-- As a User I can view comments on recipes so that I can read other user's feedback.
+### User Interaction
+- As a User I can like/unlike post so that I can share that I liked the post.
+- As a User I can comment on posts so that I can share my opinions with others.
+- As a User I can view the number of likes on a post so that I can see which is most popular.
+- As a User I can view comments on posts so that I can read other user's opinions and see discussions in whole.
 
-### EPIC | Sign in
+### Sign in
 - As a User I can register for an account so that I can begin to use the services afforded to members.
-- As a User I can log in/out so that I can like recipes, comment on recipes and manage my recipes.
-- As a User I can see my login status so that I know if I'm logged in or out.
+- As a User I can log in/out so that I can like posts, comment on posts and manage my posts in terms of editing and deleting them.
+- As a User I can see that my login status is reflected in the navbar in terms of links available so that I know if I'm logged in or out.
 
-### EPIC | Admin
-- As an Admin I can view, create, edit and delete all recipes and comments so that I can control the website's content.
-- As an Admin I can feature recipes so that I can highlight them on the home page.
 
-[Back to top ⇧](#eat-me)
+[Back to top ⇧](#super-cool-forum)
 
 ## Design
 
-The look of this website was based loosely around The Code Institute's 'I think therefore I Blog' project.  
+The look of this website is minimalist. I made this choice as I wanted the users mins to be free from any distracting design choices.
 
 ### Colour Scheme
-- I wanted to keep the colour scheme simple so I stuck with black, white and different shades of grey. This is because the uploaded pictures from users could be any host of colours, so by keeping the colour scheme neutral the site minimises the risk of clashing with any images, keeping them the main focus of the user.
+
+- The colour scheme consists of black, gray and white throughout. Pops of colour are shown through the uses of emojis.
 
 ### Typography
-- On the site I will be using the default bootstrap fonts as I find them clean, elegant and easy to read so I feel they will fit in with the site's theme nicely. The only font used on the site will be Imbue which is solely used to style the logo.
 
-### Imagery
-- All the imagery will be food related with only 4 images being static. The rest will be uploaded by various users.
+- I use the default bootstrap fonts on the site as I find them very appealing as they are clean and easy to read.
+
 
 ### Wireframes
 
-Wireframes for each page are linked here:
+Wireframes for the project are linked here:
 
-* [Home Page](assets/documents/home_page.pdf)
-* [All Recipes](assets/documents/all_recipes.pdf)
-* [Detailed Recipe](assets/documents/detailed_recipe.pdf)
-* [Your Recipes](assets/documents/your_recipes.pdf)
-* [Favourite Recipes](assets/documents/favourite_recipes.pdf)
-* [Searched Recipes](assets/documents/searched_recipes.pdf)
-* [Add Recipe](assets/documents/add_recipe.pdf)
-* [Register, log in/out](assets/documents/register_log_in_out.pdf)
+- [Link to repository with images](assets/images/wireframes/)
 
 
 ### Database Schema 
 
-![Database Schemas can be found here](assets/images/eat-me-schema.png)
-*<i>note</i> - I forgot to add a Body section to the Comment table when designing. By the time I realised that I left it out my trial period for the schema creator website had expired so I could not rectify the mistake.
+- [Database Schemas can be found here](assets/images/database-schemas)
 
-I ended up removing the email field from the comment model in the final build of the site, as I didn't like the overall look of the comment box when it featured the user's email.
+[Back to top ⇧](#super-cool-forum)
 
-[Back to top ⇧](#eat-me)
 
 ## Features
 
@@ -126,173 +114,128 @@ I ended up removing the email field from the comment model in the final build of
 
 - #### Navigation bar
     - The navigation bar is present at the top of every page and houses all links to the various other pages.
-    - The active page will be shown to have a bolder font helping users understand what page they're on.
-    - Hovering over the links will darken the font.
-    - The options to Register or Log in will change to the option to log out once a user has logged in. 
-    - Once a user has signed in, more options such as 'Your Recipes' and 'Favourite Recipes' become available.
-    - Text will also appear in the bar stating which user is signed in if any.
-    - A search bar is nested in the navbar to find recipes quickly.
+    - The options to Signup or Log in will change to the option to log out pr view profile once a user is logged in. 
+    - A search bar is nested in the navbar to find desired posts quickly.
     - The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes too small. 
 
     ![Navbar](assets/images/navbar.png)
+     ![Navbar](assets/images/navbar-responsive.png)
 
+- #### Welcome banner
+    - A welcome banner meets the user with a short message with a call-to-action. If logged out, the wbesite will urge the user to sign up or login.
+    - If a user is already signed in the message changes to welcome user and there is a link to create a new post.
 
-- #### Hero Image
-    - The hero image welcomes the user with a short message advertising what the website is about.
-    - A button to sign up and a short message is present in the image. Clicking this takes you to the register page.
-    - If a user is already signed in the message changes to 'welcome back' and the sign up button changes to a 'view recipes' button, which takes you to the all recipes page.
+    ![](assets/images/welcome-banner.png)
+    ![](assets/images/welcome-banner-login.png)
 
-    ![Hero image](assets/images/hero.png)
-
-- #### Carousel
-    - The carousel displays any recipes that the admin has selected to be featured.
-    - Clicking the image will take you to that recipe's detail page.
-    - Buttons on the edge of the carousel scroll through all the featured recipes.
-
-    ![carousel](assets/images/carousel.png)
-
-- #### Most Loved Recipes
-    - The most loved recipes section displays the top 5 recipes with the most likes.
+- #### User profile
+    - The user can views all the posts that they have made from their profile page. These can include drafts and published posts.
     - Clicking each recipe takes you to its detail page.
-    - A link to all recipes can be found at the bottom of the list.
 
-    ![most loved](assets/images/most-loved.png)
+    ![](assets/images/user-profile.png)
 
-- #### Features
-    - This section displays a couple short messages with images to showcase the site's basic features.
+- #### Post detail page
+    - The user can like the post and view comments for a post as well as comment on them.
 
-    ![features](assets/images/features.png)
+    ![](assets/images/post-detail.png)
+    ![](assets/images/post-detail-second.png)
 
-- #### Footer
-    - The footer rests at the bottom of each page and has links to all social media accounts.
-    - Clicking the links in the footer opens a separate browser to avoid pulling the user away from the site.
 
-    ![footer](assets/images/footer.png)
-
-[Back to top ⇧](#eat-me)
+[Back to top ⇧](#super-cool-forum)
 
 ### Accounts
 - #### Register Page
     - The register page is used to create an account.
 
-    ![sign up page](assets/images/sign-up-page.png)
+    ![sign up page](assets/images/sign-up.png)
 
 - #### Login Page
-    - The login page is used to log in users with an existing account.
+    - The login page is used to log in already existing users.
     - A success message will appear once a user successfully logs in.
 
-    ![sign in page](assets/images/sign-in-page.png)
+    ![sign in page](assets/images/signin.png)
 
 - #### Log out Page
-    - The log out page is used to log out users who are signed in.
-    - A success message will appear once a user successfully logs out.
+    - The log out page is used to log out users who are already signed in.
+    - The user will be redirected to a confirmation page.
+    - A success message will then appear once a user successfully logs out after confirming logout.
 
-    ![log out page](assets/images/sign-out-page.png)
+    ![log out page](assets/images/logout.png)
 
-[Back to top ⇧](#eat-me)
+[Back to top ⇧](#super-cool-forum)
 
-### All Recipes Page
+### Home page
 
-- #### Recipe Cards
-    - The site will paginate all recipe cards to display 6 to a page.
-    - Each card will display the recipe's image, Title, Author, Description, Published date and how many likes it has received.
-    - If the recipe is vegetarian or vegan a small green corresponding label will be present in the bottom left corner.
-    - Clicking anywhere inside the recipes card will take you directly to that recipes detail page.
+- #### List of posts from all users
+    - The site will paginate posts to display 6 to a page.
+    - Each post will display the title, author, content, published date and how many likes it has already gotten.
+    - Clicking the title or the view comments links will bring the user to the post detail page.
 
-    ![all recipes page](assets/images/all-recipes.png)
+    ![](assets/images/home-page.png)
 
-### Favourite Recipes Page
+### User Profile
 
-- #### Favourite Recipes
-    - This page shows only recipes that the user has liked.
-    - If a user tries to access this page without being signed in they will receive a not logged in error.
+- #### User published and draft posts
+    - This page displays only the recipes that the user has created whether they be drafts or published posts.
+    - Each recipe will have two links to either edit or delete the post.
+    - The edit link will take users to the edit post page for that particular post.
+    - Clicking the delete link will bring the user to a confirmation page to see if they areally want to delete the post.
+    - It is not possible to access the profile site if the user is not logged in.
 
-    ![favourite recipes](assets/images/fav-recipes.png)
+    ![](assets/images/user-profile.png)
 
-### Your Recipes Page
+### Searched posts Page
 
-- #### Your Recipes
-    - This page displays only the recipes that the user has created. 
-    - At the top of the page is an 'Add Recipe' button which takes the user to the add recipe page.
-    - Each recipe will have two buttons, an edit and a delete button.
-    - The edit button will take users to the edit recipe page for that particular recipe.
-    - Clicking the delete button will bring up a modal which asks the user if they are sure they want to delete that particular recipe.
-    - A success message appears if a recipe is deleted successfully. 
-    - If a user tries to access this page without being signed in they will receive a not logged in error. 
+- #### Searched posts
+    - Anything entered into the search bar in the navigation bar bring the user to this page which presents the findings.
+    - If the user forgets to enter anything, the result page will let them know.
 
-    ![your recipes](assets/images/your-recipes.png)
+    ![search page](assets/images/search.png)
+    ![search page](assets/images/search-forget.png)
 
-### Searched Recipes Page
+[Back to top ⇧](#super-cool-forum)
 
-- #### Searched Recipes
-    - Anything entered into the search bar in the navigation bar displays results here.
-    - If the word vegetarian or vegan is entered into the search bar, it will result in all vegetarian or vegan recipes, not just ones with those words in the title. 
+### Posts
 
-    ![search page](assets/images/searched-page.png)
+- #### Post card
+    - This will show the title, author, published date and likes.
 
-[Back to top ⇧](#eat-me)
-
-### Recipe Detail Page
-
-- #### Recipe Card
-    - At the top of the page the recipe card will show the image, title, author, published date and any dietary information.
-
-    ![recipe card top](assets/images/recipe-card-top.png)
-
-- #### Main Section
-    - The main body of the page consists of the description, ingredients, and method. These combined is what creates the whole recipe.
-    - At the bottom of the section is an icon and counter for both likes and comments.
-    - Clicking the outlined heart renders the recipe 'liked' by the user which will then fill in the heart, add 1 to the counter, and add the recipe to the users favourite recipes page.
-    - Alternatively, clicking a filled in heart renders the recipe 'unliked' which will then change the heart back to an outline, reduce the counter by 1 and remove the recipe from the user's favourite recipe page.
-
-    ![recipe main section](assets/images/recipe-main-section.png)
+    ![](assets/images/post-detail.png)
 
 - #### Comments
-    - At the bottom of the page is the comment section. Here you can view all comments left by users.
+    - At the bottom of the page, there is the comment section where you can view all comments left on a post.
     - Only signed in users can leave a comment.
-    - Comments with profanity automatically fail and will not upload.
-    - Any comments left by the user that is currently signed in can be edited or deleted.
-    - A success message appears once comments are left.
-    - A success message appears once comments are deleted.
-    - If a user tries to edit a comment without being signed in they receive a not logged in error.
-    - If a user tries to edit a comment that does not belong to them they receive a forbidden access error. 
 
-    ![comment section](assets/images/comment.png)
+    ![comment section](assets/images/post-detail-second.png)
 
-### Add Recipe Page
+### Add post page
 
-- #### Adding Recipes
-    - The adding recipe page is where users upload their creations.
-    - Each recipe is uploaded by filling out a form.
-    - Failing to fill out either the recipes Title, Description, Ingredients, or Method, results in the form failing and rendering a message stating which fields you have missed.
-    - Using profanity will result in the form failing and the relevant section will be flagged with a message.
-    - The form has two checkbox's that toggle whether the recipe is suitable for vegetarians or vegans. 
-    - Clicking the vegan checkbox automatically checks the vegetarian checkbox and subsequently unchecking the vegetarian box unchecks the vegan box.
-    - The user has two options to upload an image of their recipe. They can either choose a file to upload or simply put in the URL address of the image. 
-    - If neither of the image options are used a default image will be generated.
-    - An add Recipe button is present at the bottom of the page once the form is ready to send.
-    - If a user tries to access this page without being signed in they will receive a not logged in error.
-    - A success message appears once a recipe is added successfully.  
+- #### Adding posts
+    - The adding posts page is where users can create posts.
+    - Each post is uploaded by filling out a form.
+    - Failing to fill out either the post title or body results in an error messages showing stating which fields you have missed.
+    - Clicking the dropdown menu allow you to say whether you want a post published or as a draft.
+    - A submit button is present at the bottom of the page once the form is ready to send.
+    - There is no option to access this page for logged out users.
 
-    ![add recipe page](assets/images/add-recipe-page.png)
+    ![](assets/images/create-post.png)
 
-### Edit Recipe Page
+### Edit post Page
 
-- #### Editing Recipes
-    - Editing a recipe brings up the form that was filled in when the recipe was created and has all the fields filled out with the original content.
-    - Changing the content and hitting save at the bottom of the page saves the recipe.
-    - A success message appears once a recipe is edited successfully.
-    - If a user tries to access this page without being signed in they will receive a not logged in error.
-    - If a user tries to edit a recipe that does not belong to them they receive a forbidden access error.
+- #### Editing posts
+    - Editing a post brings up the form that was filled in when the post was created and has all the fields filled out with that content.
+    - Changing the content and hitting submit at the bottom of the forms saves the new version of the form over the older.
+    - Only the original post author will be able to edit posts.
 
-    ![edit recipe page](assets/images/edit-recipe-page.png)
+    ![](assets/images/edit-post.png)
 
 - #### Features to add
-    - A star rating system to replace the like button. Users would score each recipe out of 5 with the average reflected as filled stars.
-    - Submenus for All Recipes. Sections such as breakfast, lunch, dinner, dessert, or cultural sections such as mediterranean, asian, spanish etc.
-    - Option to share recipes on social media.
+    - I would like to add functionality to edit and delete comments for the original commentors.
+    - I would like to work more on the profile page. It would be nice and personable to have a biography for the user.
+    - Further, it would be nice to be able to visit each user's profile page and see the bio. Of coutse, I would keep the draft posts hidden.
+    - Speaking of the draft posts, I do not currently have a tag to show them as drafts so I would like to have that reflected in the future.
 
-[Back to top ⇧](#eat-me)
+[Back to top ⇧](#super-cool-forum)
 
 ## Technologies
 
@@ -335,43 +278,87 @@ I ended up removing the email field from the comment model in the final build of
     - Used to validate JS code.
 - [Summernote](https://summernote.org/)
     - Used to add a WYSIWYG text box to the add recipe page.
-- [Profanity Filter](https://github.com/ReconCubed/django-profanity-filter)
-    - App used to remove profanity from recipes and comments.
-- [Tinyjpg](https://tinyjpg.com/)
-    - Used to compress images.
-- [Screen to Gif](https://www.screentogif.com/)
-    - Used to create gifs for my readme.
 - [Heroku](https://www.heroku.com/)
     - To deploy the project.
 
-[Back to top ⇧](#eat-me)
+[Back to top ⇧](#super-cool-forum)
 
 ## Testing
 
 ### Validators
 
-HTML
-[index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2F)
-create post - https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fcreate-post
-user profile - https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fuser-profile#textarea - only some errors related to the django syntax
-post detail - https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fhello%2F
-edit post - https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fedit%2Fhello
+#### HTML5 validator
+- [Index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2F) - PASSES
+- [Create post](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fcreate-post) - PASSES
+- [User profile](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fuser-profile#textarea) - PASSES
+- [Post detail](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fhello%2F) - PASSES
+- [Edit post](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fsuper-cool-forum.herokuapp.com%2Fedit%2Fhello) - PASSES
 
-CSS
-passes
+#### CSS validator
+This test passes.
 
-Javascript
-passes
+#### Javascript 
+This test passes.
 
-Python PEP 8
-All files pass
+#### Python PEP8
+There were inititally some failures due to spacing and line lengths. These have since all been corrected and all files are PEP8 friendly.
 
-Lighthouse results
+#### Lighthouse results
 ![lighthouse](assets/images/lighthouse-results.png)
 
+### Compatibility Testing
+- The site looks the same on different browsers.
+- The site is responsive across devices.
 
+### User story testing
 
+#### Navigation
+- As a User I can understand the website's purpose so that I know if it's what I'm looking for.
+    - The site logo is evident and there are post on the main page showing the type of content on the site.
+    - There is a call to action whether you are logged in or not.
+- As a User I can navigate around the site so that I can easily view desired content.
+    - The links are clear on the navbar and work with the call-to-actions to let the user know what options are available to them.
+- As a User I can view a list of posts on the home page to later pick one to look at in more detail.
+    - The home page lists all published posts from members of the site.
+    - The links in the title and in the call-to-action to view the comments show that the user can click through to view the post in more detail.
+- As a User I can click on a post so that I can read the comments on it.
+    - There link to view comments brings the user to the post detail page where the comments can be found at the bottom of the page.
+- As a User I can search the posts's titles so that I can find related posts.
+    - There is a search bar on the nav bar. It is easy to spot on the top right of the screen.
+    - The user can enter any of the letters from a title and all relevant post will be shown on the results page.
 
+#### User's Posts
+- As a User I can create posts so that other users can view them and comments on them.
+    - Logged in users can create posts. They are brought to a form. Once this is submitted, the new posts will appear on the home page and in the user's profile page.
+    - Other users will see everyone else's published posts.
+- As a User I can view all the posts that I have created (published or saved as draft) from my prodfile page so that I can see and manage all the posts.
+    - The logged in user can navigate to the profile page to view all their posts
+- As a User I can edit posts so that I can update the post with any desired information or mistakes to my recipes.
+    - The original author is able to edit their own posts and save the new version over the other one. They are then redirected to the home page.
+- As a User I can delete my own posts so that I can remove any unwanted posts from my collection.
+    - The original author can delete their own posts. They are brought to a confirmation page. Once confirmed, they are brought to the home page.
+
+#### User Interaction
+- As a User I can like/unlike post so that I can share that I liked the post.
+    - The logged in user can like and unlike posts. They are redirected to the same page which shows the liked/unliked heart.
+- As a User I can comment on posts so that I can share my opinions with others.
+    - The logged in user can comment on posts on the post detail page. Once they submit the form, they are redirected to the same page with the updated component.
+- As a User I can view the number of likes on a post so that I can see which is most popular.
+    - From the home page and post detail page, all users can see the likes on each post.
+- As a User I can view comments on posts so that I can read other user's opinions and see discussions in whole.
+    - From the post detail page, all users can view the different comments left on posts.
+
+#### Sign in
+- As a User I can register for an account so that I can begin to use the services afforded to members.
+    - There is a clear sign up link in the navbar. From clicking that, the user is redirected to a form which they can submit to have their account created.
+- As a User I can log in/out so that I can like posts, comment on posts and manage my posts in terms of editing and deleting them.
+    - There is a clear log in and log out link in the navbar depending on if the user is logged in or not. If they login, they are brought to a form to fill out their credentials. If it is correct, they are directed to the home page. Otherwise, they will be prompted to enter the correct details. If they logout, they are brought to a confirmation page. Upon confirmation, they are directed to the home page as a logged out user.
+- As a User I can see that my login status is reflected in the navbar in terms of links available so that I know if I'm logged in or out.
+    - The logged in user can see the links 'home', 'profile' and 'logout' whereas the logged out user can see the links 'home', 'sign up' and 'login'. There is also a welcome banner on each of the main pages giving a call-to-action depending on if the user is logged in or not.
+
+### Unit testing
+
+Unit tests were written for forms, models and views.
 
 
 ## Deployment
@@ -397,7 +384,7 @@ This project was deployed using Github and Heroku.
 - ### Forking
 
     To fork my project you must;
-    1. Sign in to Github and go to my [repository](https://github.com/Delboy/Colour-Type)
+    1. Sign in to Github and go to my [repository](https://github.com/sarahjameson/CI-PP4-super_cool_forum)
     2. Locate the Fork button at the top right of the page.
     3. Select this. 
     4. The fork is now in your repositories.
@@ -405,7 +392,7 @@ This project was deployed using Github and Heroku.
 - ### Clone
     To clone my project you must;
 
-    1. Sign in to Github and go to my [repository](https://github.com/Delboy/Colour-Type)
+    1. Sign in to Github and go to my [repository](https://github.com/sarahjameson/CI-PP4-super_cool_forum)
     2. Above the list of files click the green ‘code’ button.
     3. This will bring up a few options as to how you would like to clone. You can select HTTPS, SSH or Github CLI, then click the clipboard icon to copy the URL.
     4. Open git bash
@@ -413,8 +400,19 @@ This project was deployed using Github and Heroku.
 
     For more information on cloning check out the github documentation [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
+## Known bugs
+- The comment form does not empty after submitting a comment.
+
+
 ## Credits
+- Thank you to the Code Institute Django lectures for helping with the testing aspect and for setting up the project.
+- I used the following youtube videos also for assistance:
+    - [Codemy channel](https://www.youtube.com/watch?v=8NPOwmtupiI&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=7&ab_channel=Codemy.com)
+    - [Traversy Media channel](https://www.youtube.com/watch?v=PtQiiknWUcI&t=8032s&ab_channel=TraversyMedia)
 
 
 
-[Back to top ⇧](#eat-me)
+
+
+
+[Back to top ⇧](#super-cool-forum)
