@@ -17,7 +17,10 @@ class TestViews(TestCase):
         """
         Test to ensure post detail page is displayed
         """        
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        post = Post.objects.create(
+            title='Test Post Item',
+            content='Hello', status=1,
+            slug="test-post-slug")
         response = self.client.get(f'/{post.slug}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'post_detail.html')
@@ -38,7 +41,10 @@ class TestViews(TestCase):
         """
         Test to ensure update post page can be displayed"
         """ 
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        post = Post.objects.create(
+            title='Test Post Item',
+            content='Hello', status=1,
+            slug="test-post-slug")
         response = self.client.get(f'/edit/{post.slug}')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'update_post.html')
@@ -55,8 +61,13 @@ class TestViews(TestCase):
         """
         Test to ensure posts can be created
         """ 
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1)
-        response = self.client.post('/create-post', {'title': 'Test Post Item', 'content': 'Hello', 'status': 1})
+        post = Post.objects.create(
+            title='Test Post Item',
+            content='Hello',
+            status=1)
+        response = self.client.post(
+            '/create-post',
+            {'title': 'Test Post Item', 'content': 'Hello', 'status': 1})
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'create_post.html')
 
@@ -68,7 +79,11 @@ class TestViews(TestCase):
             username='testuser', password='password'
             )
         self.client.login(username='testuser', password='password')
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        post = Post.objects.create(
+            title='Test Post Item',
+            content='Hello',
+            status=1,
+            slug="test-post-slug")
         comment = Comment.objects.create(body='Testing', post=post)
         response = self.client.post(f'/{post.slug}/', {'body': 'Testing'})
         self.assertEqual(response.status_code, 200)
@@ -78,7 +93,11 @@ class TestViews(TestCase):
         """
         Test to ensure posts can be deleted
         """ 
-        post = Post.objects.create(title='Test Post Item', content='Hello', status=1, slug="test-post-slug")
+        post = Post.objects.create(
+            title='Test Post Item',
+            content='Hello',
+            status=1,
+            slug="test-post-slug")
         response = self.client.post(f'/delete-post/{post.slug}')
         self.assertRedirects(response, '/')
         existing_posts = Post.objects.filter(slug=post.slug)
