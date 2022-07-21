@@ -1,9 +1,9 @@
 from django.shortcuts import (
     render, get_object_or_404, get_list_or_404, reverse, redirect)
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import Post, Comment
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ContactForm
 from django.utils.text import slugify
 
 
@@ -162,3 +162,9 @@ class SearchPosts(View):
             "searched": searched,
             "posts": posts
         })
+
+
+def contact_view(request):
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, "contact.html", context)

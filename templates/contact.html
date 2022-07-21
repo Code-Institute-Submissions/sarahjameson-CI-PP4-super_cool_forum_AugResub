@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Contact us:</h3>
+            <form method="post" action="">
+              {{ post_form | crispy }}
+              {% csrf_token %}
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}

@@ -27,13 +27,25 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def allowed_to_edit(self, request, slug):
+        if self.author:
+            return True
+        else:
+            return False
+
+    def allowed_to_delete(self, request, slug):
+        if self.author:
+            return True
+        else:
+            return False
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
         related_name='comments'
-        )
+    )
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
@@ -44,3 +56,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+class Contact(models.Model):
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email

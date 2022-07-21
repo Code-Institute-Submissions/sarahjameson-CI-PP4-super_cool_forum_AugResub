@@ -15,4 +15,5 @@ urlpatterns = [
     ),
     path('user-profile', views.ProfilePostList.as_view(), name='user_profile'),
     path('search-posts', views.SearchPosts.as_view(), name='search_posts'),
+    path('contact', views.contact_view, name='contact'),
     ]
