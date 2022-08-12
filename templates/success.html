@@ -2,19 +2,13 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
-
- <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3">
         <div class="card">
           <div class="card-body">
-            <h3>Contact us:</h3>
-            <form method="post" action="">
-              {{ contact_form | crispy }}
-              {% csrf_token %}
-              <input type="submit" value="Submit">
-            </form>
+            <h3>Thank you for your inquiry</h3>
+            <p>Your contact information and message were successfully submitted.</p>
           </div>
         </div>
       </div>
