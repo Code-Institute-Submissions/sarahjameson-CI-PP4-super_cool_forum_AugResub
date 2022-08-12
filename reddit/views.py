@@ -156,6 +156,12 @@ class DeletePost(View):
         post.delete()
         return redirect('home')
 
+    def dispatch(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.author != self.request.user:
+            raise Http404("You are not allowed to delete this Post")
+        return super(DeletePost, self).dispatch(request, slug, *args, **kwargs)
+
 
 class ProfilePostList(View):
 
